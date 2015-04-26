@@ -2,11 +2,11 @@
 //
 
 #include <vector>
-#include <math>
+#include <cmath>
 #include<fstream>
 #include<string>
 #include "stdafx.h"
-#define coord=2
+#define coord 2
 using namespace std;
 
 class Passenger{
