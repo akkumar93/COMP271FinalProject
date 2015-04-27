@@ -8,23 +8,12 @@
 
 using namespace std;
 
-
-Passenger::Passenger(string filename){
-	ifstream in;
-	in.open(filename);
-	while (!in.peek() = '\n'){
-		in.getline(name, 10, '  ');
-		in >> start[0];
-		in >> start[1];
-		in >> end[0];
-		in >> end[1];
-	}
-	distance = calc_distance(start, end);
-}
-
-
-int Passenger::calc_distance(int a[], int b[]){
+/*int Passenger::calc_distance(int a[], int b[]){
 	distance = sqrt((b[0] - a[0]) ^ 2 + (b[1] - [1]) ^ 2);
 	return distance;
 }
-}
+int calc_cost(int dist){
+	int total;
+	total = 35 - (0.843)*(dist);
+	return total;
+}*/
