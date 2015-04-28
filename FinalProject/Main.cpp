@@ -6,17 +6,17 @@
 #include<fstream>
 #include<string>
 #include "stdafx.h"
+#include "Graph.h"
+
+
 #define coord 2
 using namespace std;
 
-
-Graph::Graph(){
-  for(int i=0; i<max; i++){
-    headnodes[i]=NULL;
-  }
-}
-void Graph::create(){
-  GraphNode *curr, *prev;
-  int n1, i, j, vertex, done=false;
-  
+void main(){
+	vector<list<Passenger>> paths;
+	Graph passGraph("PassengerList.txt");
+	passGraph.create("PassengerList.txt");
+	passGraph.write_out();
+	paths= passGraph.find_all_paths(0);
+	passGraph.vector_to_screen(paths);
 }

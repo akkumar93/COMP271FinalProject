@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Passenger.h"
 #include <iostream>
 #include <string>

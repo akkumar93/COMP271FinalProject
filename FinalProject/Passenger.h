@@ -9,7 +9,7 @@
 
 class Passenger{
 private:
-	string name;
+	int name;
 	/*int start[coord];
 	int end[coord];*/
 	int distance;
