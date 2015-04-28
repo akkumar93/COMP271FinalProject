@@ -13,10 +13,11 @@
 using namespace std;
 
 void main(){
-	vector<list<Passenger>> paths;
-	Graph passGraph("PassengerList.txt");
+	
+	Graph passGraph;
 	passGraph.create("PassengerList.txt");
-	passGraph.write_out();
-	paths= passGraph.find_all_paths(0);
-	passGraph.vector_to_screen(paths);
+	//passGraph.write_out();
+	//paths= passGraph.find_all_paths(0);
+	passGraph.vector_to_screen();
+
 }

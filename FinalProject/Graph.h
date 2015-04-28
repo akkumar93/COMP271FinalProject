@@ -24,45 +24,42 @@ public:
 class PNode
 {
 public:
-	Passenger p;
+	string name;
+	int weight;
+	int cost;
 	PNode * next;
 	PNode(){
-		p.name = "";
-		p.cost = 0;
-		p.weight = 0;
-		p.col = 0;
-		p.visited = 0;
+		name = "";
+		weight = 0;
+		cost = 0;
 		next = NULL;
 	}
 };
+
 //PNode * start;
 //PNode *curr;
+class PAdjList{
+	PNode * head;
+};
 
 class Graph
 {
-	Passenger ** passMatrix;
+	vector<PNode*> headnodes;
 	int num_pass;
-	
+	vector<string> passengers;
 public:
 	
 	Graph();
-	Graph(string filename){
+
+	/*Graph(string filename){
 		fstream in;
 		in.open(filename);
 		in >> num_pass;
-		passMatrix = new Passenger*[num_pass];
 		for (int i = 0; i < num_pass; i++){
-			passMatrix[i] = new Passenger[num_pass];
+			
 		}
 		in.close(); in.clear();
-		for (int k = 0; k < num_pass; k++){
-			for (int m = 0; m < num_pass; m++){
-				passMatrix[k][m].name = "";
-				passMatrix[k][m].cost = 0;
-				passMatrix[k][m].weight = 0;
-				passMatrix[k][m].visited = 0;
-			}
-		}
+		
 		
 	}
 	~Graph(){
@@ -70,11 +67,14 @@ public:
 			delete[] passMatrix[i];
 		}
 		delete passMatrix;
-	}
+	}*/
+
+
 	void create(string filename);
 	void write_out();
-	vector<list<Passenger>> find_all_paths(int row);
-	void vector_to_screen(vector<list<Passenger>> node);
+	vector<list<Passenger>> BFS(string start, string goal);
+	vector<PNode*> find_all_paths(int row);
+	void vector_to_screen();
 	int total_cost();
 
 };
