@@ -9,13 +9,13 @@
 
 class Passenger{
 private:
-	string name;
-	int start[coord];
-	int end[coord];
+	int name;
+	/*int start[coord];
+	int end[coord];*/
 	int distance;
+	int costPass;
 public:
 	Passenger();
-	Passenger(string filename);
 	int calc_distance(int a[], int b[]);
-
-}
+	int calc_cost(int dist);
+};
