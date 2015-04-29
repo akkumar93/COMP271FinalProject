@@ -11,35 +11,19 @@ using namespace std;
 
 
 
-class Passenger
-{
-public:
-	string name;
-	int cost;
-	int weight;
-	int col;
-	bool visited;
-
-};
 class PNode
 {
 public:
 	string name;
 	int weight;
-	int cost;
+	int place;
 	PNode * next;
 	PNode(){
 		name = "";
 		weight = 0;
-		cost = 0;
+		place = 0;
 		next = NULL;
 	}
-};
-
-//PNode * start;
-//PNode *curr;
-class PAdjList{
-	PNode * head;
 };
 
 class Graph
@@ -47,34 +31,16 @@ class Graph
 	vector<PNode*> headnodes;
 	int num_pass;
 	vector<string> passengers;
+	vector<vector<PNode*>> paths;
 public:
 	
 	Graph();
-
-	/*Graph(string filename){
-		fstream in;
-		in.open(filename);
-		in >> num_pass;
-		for (int i = 0; i < num_pass; i++){
-			
-		}
-		in.close(); in.clear();
-		
-		
-	}
-	~Graph(){
-		for (int i = 0; i < num_pass; i++){
-			delete[] passMatrix[i];
-		}
-		delete passMatrix;
-	}*/
-
-
 	void create(string filename);
 	void write_out();
-	vector<list<Passenger>> BFS(string start, string goal);
-	vector<PNode*> find_all_paths(int row);
+	bool contains(vector<PNode*> visited, string word);
+	void find_all_paths(int start, vector<PNode*> visited, string end,int max_length, int min_length);
 	void vector_to_screen();
-	int total_cost();
+	int charge_passengers();
+	int shortest_path();
 
 };
